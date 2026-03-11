@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { UserMenu } from "@/components/UserMenu";
 import { RefreshCw, Bell, Activity } from "lucide-react";
-import zenkaLogo from "@/assets/zenka-logo.png";
+// Logo removed - using text brand
 import {
   DropdownMenu,
   DropdownMenuContent,
