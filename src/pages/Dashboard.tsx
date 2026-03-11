@@ -543,7 +543,7 @@ const Dashboard = () => {
                         </Badge>
                       </div>
                     </div>
-                  ))
+                  ))}
                 </div>
               )}
             </CardContent>
