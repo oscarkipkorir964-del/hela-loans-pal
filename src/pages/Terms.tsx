@@ -24,7 +24,7 @@ const Terms = () => {
               
               {/* Header */}
               <div className="text-center border-b border-border pb-4">
-                <h3 className="font-bold text-lg">ZENKA</h3>
+                <h3 className="font-bold text-lg">TALA FUNDS</h3>
                 <p className="text-muted-foreground">P.O BOX 30834-0100, NAIROBI, KENYA</p>
                 <p className="text-muted-foreground">+254 755 440 358</p>
               </div>
