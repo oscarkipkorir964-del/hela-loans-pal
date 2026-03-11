@@ -54,7 +54,7 @@ const LoanSelection = () => {
 
       const limitAmount = applications[0].loan_limit;
       setLoanLimit(limitAmount);
-      localStorage.setItem("zenkaLoanLimit", limitAmount.toString());
+      localStorage.setItem("talaLoanLimit", limitAmount.toString());
       // Default to minimum loan amount or half of limit, whichever is greater
       setSelectedAmount(Math.max(MIN_LOAN_AMOUNT, Math.floor(limitAmount / 2)));
       
