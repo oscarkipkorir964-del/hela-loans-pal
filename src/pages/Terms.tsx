@@ -16,7 +16,7 @@ const Terms = () => {
             </div>
             <CardTitle className="text-2xl">Terms & Conditions</CardTitle>
             <CardDescription>
-              Zenka Service Agreement
+              TALA FUNDS Service Agreement
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
