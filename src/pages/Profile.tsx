@@ -83,7 +83,7 @@ const Profile = () => {
             <Button variant="outline" size="icon" onClick={() => navigate("/dashboard")}>
               <ArrowLeft className="w-4 h-4" />
             </Button>
-            <img src={zenkaLogo} alt="Zenka" className="h-10 sm:h-12 w-auto" />
+            <div className="h-10 sm:h-12 w-10 sm:w-12 bg-gradient-primary rounded-xl flex items-center justify-center"><span className="text-primary-foreground font-bold text-xl font-display">T</span></div>
             <h1 className="text-xl sm:text-2xl md:text-3xl font-bold">My Profile</h1>
           </div>
           <ThemeToggle />

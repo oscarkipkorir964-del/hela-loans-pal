@@ -487,8 +487,8 @@ const Application = () => {
         <Dialog open={isLoading} onOpenChange={() => {}}>
           <DialogContent className="max-w-[85%] sm:max-w-sm rounded-3xl border-0 shadow-2xl bg-card [&>button]:hidden">
             <DialogHeader>
-              <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse overflow-hidden">
-                <img src={zenkaLogo} alt="Zenka" className="w-16 h-16 object-contain" />
+              <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse">
+                <span className="text-primary font-bold text-3xl font-display">T</span>
               </div>
               <DialogTitle className="text-center text-2xl">
                 Calculating Your Loan Limit

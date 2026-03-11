@@ -36,7 +36,7 @@ const LoanLimit = () => {
 
       const limitAmount = applications[0].loan_limit;
       setLoanLimit(limitAmount);
-      localStorage.setItem("zenkaLoanLimit", limitAmount.toString());
+      localStorage.setItem("talaLoanLimit", limitAmount.toString());
       setShowConfetti(true);
       setIsLoading(false);
 

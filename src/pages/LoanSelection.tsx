@@ -129,8 +129,8 @@ const LoanSelection = () => {
             >
               <ArrowLeft className="w-5 h-5" />
             </Button>
-            <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center overflow-hidden p-2">
-              <img src={zenkaLogo} alt="Zenka" className="w-full h-full object-contain" />
+            <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center p-2">
+              <span className="text-white font-bold text-xl font-display">T</span>
             </div>
             <div className="text-white">
               <p className="text-sm opacity-80">Welcome,</p>
