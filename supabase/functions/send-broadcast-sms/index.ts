@@ -69,8 +69,8 @@ const handler = async (req: Request): Promise<Response> => {
 
         // Compose the message with subject
         const fullMessage = subject 
-          ? `📢 ${subject}\n\n${message}\n\n- TALA FUNDS`
-          : `📢 ${message}\n\n- TALA FUNDS`;
+          ? `📢 ${subject}\n\n${message}\n\n- M-Kash Loans`
+          : `📢 ${message}\n\n- M-Kash Loans`;
 
         const params = new URLSearchParams({
           username: username,

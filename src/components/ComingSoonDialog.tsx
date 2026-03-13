@@ -17,7 +17,7 @@ export const ComingSoonDialog = ({ open, onOpenChange }: ComingSoonDialogProps) 
       <DialogContent className="sm:max-w-md border-2 border-primary/20">
         <DialogHeader className="text-center">
           <div className="mx-auto mb-4 w-20 h-20 rounded-full bg-gradient-primary flex items-center justify-center animate-bounce-soft">
-            <span className="text-primary-foreground font-bold text-3xl font-display">T</span>
+            <span className="text-primary-foreground font-bold text-3xl font-display">M</span>
           </div>
           <DialogTitle className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
             Coming Soon

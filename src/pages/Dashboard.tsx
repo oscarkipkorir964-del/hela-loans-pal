@@ -277,7 +277,7 @@ const Dashboard = () => {
       <div className="min-h-screen flex items-center justify-center bg-background">
         <div className="text-center">
           <div className="w-20 h-20 mx-auto mb-4 rounded-2xl bg-primary flex items-center justify-center shadow-lg">
-            <span className="text-primary-foreground font-bold text-3xl font-display">T</span>
+            <span className="text-primary-foreground font-bold text-3xl font-display">M</span>
           </div>
           <Loader2 className="w-8 h-8 animate-spin text-primary mx-auto" />
         </div>
@@ -294,7 +294,7 @@ const Dashboard = () => {
             <div className="flex items-center gap-2">
               <ThemeToggle />
             </div>
-            <span className="font-bold text-xl text-foreground font-display">TALA FUNDS</span>
+            <span className="font-bold text-xl text-foreground font-display">M-Kash Loans</span>
             <NotificationsCenter />
           </div>
         </div>
@@ -306,7 +306,7 @@ const Dashboard = () => {
           <h1 className="text-2xl font-bold text-foreground font-display">
             Hello, {userName}!
           </h1>
-          <p className="text-muted-foreground text-sm">Welcome back to TALA FUNDS</p>
+          <p className="text-muted-foreground text-sm">Welcome back to M-Kash Loans</p>
         </div>
 
         {/* Quick Actions */}
