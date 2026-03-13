@@ -142,7 +142,7 @@ const ResetPassword = () => {
       <Card className="w-full max-w-md shadow-card">
         <CardHeader className="text-center space-y-4">
           <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto">
-            <span className="text-primary-foreground font-bold text-2xl font-display">T</span>
+            <span className="text-primary-foreground font-bold text-2xl font-display">M</span>
           </div>
           <div>
             <CardTitle className="text-2xl">Reset Password</CardTitle>

@@ -42,7 +42,7 @@ const AppDownloadSection = () => {
               <Download className="w-5 h-5 mr-2" />
               <div className="text-left">
                 <div className="text-xs opacity-80">Install now</div>
-                <div className="font-bold">TALA FUNDS</div>
+                <div className="font-bold">M-Kash Loans</div>
               </div>
             </Button>
           ) : (
@@ -52,7 +52,7 @@ const AppDownloadSection = () => {
                 className="bg-foreground text-background hover:bg-foreground/90 rounded-xl px-5 py-3 h-auto"
               >
                 <div className="w-6 h-6 mr-2 bg-primary rounded flex items-center justify-center">
-                  <span className="text-primary-foreground font-bold text-xs">T</span>
+                  <span className="text-primary-foreground font-bold text-xs">M</span>
                 </div>
                 <div className="text-left">
                   <div className="text-xs opacity-80">Download app</div>

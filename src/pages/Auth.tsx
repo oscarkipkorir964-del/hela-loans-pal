@@ -111,7 +111,7 @@ const Auth = () => {
     }
 
     try {
-      const email = `${formData.phoneNumber}@talafunds.co.ke`;
+      const email = `${formData.phoneNumber}@mkashloans.co.ke`;
       
       if (isLogin) {
         const { data: authData, error } = await supabase.auth.signInWithPassword({
@@ -155,7 +155,7 @@ const Auth = () => {
 
         toast({
           title: "Account Created",
-          description: "Welcome to TALA FUNDS!",
+          description: "Welcome to M-Kash Loans!",
         });
         
         navigate("/dashboard");
@@ -178,11 +178,11 @@ const Auth = () => {
       <Card className="w-full max-w-md shadow-card relative z-10">
         <CardHeader className="text-center space-y-4">
           <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto">
-            <span className="text-primary-foreground font-bold text-2xl font-display">T</span>
+            <span className="text-primary-foreground font-bold text-2xl font-display">M</span>
           </div>
           <div>
             <CardTitle className="text-2xl">
-              {isLogin ? "Welcome Back!" : "Join TALA FUNDS"}
+              {isLogin ? "Welcome Back!" : "Join M-Kash Loans"}
             </CardTitle>
             <CardDescription>
               {isLogin 

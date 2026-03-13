@@ -1,4 +1,4 @@
-import { Mail, Phone, FileText } from "lucide-react";
+import { Mail, FileText } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-center md:text-left">
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} TALA FUNDS. All rights reserved.
+              © {new Date().getFullYear()} M-Kash Loans. All rights reserved.
             </p>
           </div>
           
@@ -22,19 +22,11 @@ const Footer = () => {
             </Link>
             
             <a 
-              href="mailto:support@talafunds.co.ke"
+              href="mailto:support@mkashloans.co.ke"
               className="flex items-center gap-2 text-sm hover:text-primary transition-colors"
             >
               <Mail className="w-4 h-4" />
-              support@talafunds.co.ke
-            </a>
-            
-            <a 
-              href="tel:+254755440358"
-              className="flex items-center gap-2 text-sm hover:text-primary transition-colors"
-            >
-              <Phone className="w-4 h-4" />
-              0755 440 358
+              support@mkashloans.co.ke
             </a>
           </div>
         </div>

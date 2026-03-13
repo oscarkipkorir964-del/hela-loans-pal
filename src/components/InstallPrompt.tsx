@@ -50,9 +50,9 @@ const InstallPrompt = () => {
         
         <DialogHeader className="text-center space-y-2">
           <div className="w-14 h-14 bg-gradient-primary rounded-xl flex items-center justify-center mx-auto">
-            <span className="text-primary-foreground font-bold text-xl font-display">T</span>
+            <span className="text-primary-foreground font-bold text-xl font-display">M</span>
           </div>
-          <DialogTitle className="text-lg font-display">Get TALA FUNDS App</DialogTitle>
+          <DialogTitle className="text-lg font-display">Get M-Kash Loans App</DialogTitle>
           <DialogDescription className="text-center text-xs">
             Install for quick access to loans & savings
           </DialogDescription>

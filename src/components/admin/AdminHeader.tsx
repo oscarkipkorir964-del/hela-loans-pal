@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { UserMenu } from "@/components/UserMenu";
 import { RefreshCw, Bell, Activity } from "lucide-react";
-// Logo removed - using text brand
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -20,7 +19,7 @@ export const AdminHeader = ({ user, onRefresh, pendingCount }: AdminHeaderProps)
   return (
     <div className="flex items-center justify-between gap-3">
       <div className="flex items-center gap-3 min-w-0 flex-1">
-        <div className="w-10 h-10 bg-gradient-primary rounded-xl flex items-center justify-center flex-shrink-0"><span className="text-primary-foreground font-bold text-lg font-display">T</span></div>
+        <div className="w-10 h-10 bg-gradient-primary rounded-xl flex items-center justify-center flex-shrink-0"><span className="text-primary-foreground font-bold text-lg font-display">M</span></div>
         <div className="min-w-0">
           <h1 className="text-xl sm:text-2xl font-bold flex items-center gap-2">
             Super Admin
