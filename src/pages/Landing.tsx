@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { useRef } from "react";
+import mkashLogo from "@/assets/mkash-logo.png";
 
 const testimonials = [
   {
