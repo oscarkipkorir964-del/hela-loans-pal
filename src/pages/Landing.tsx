@@ -128,9 +128,7 @@ const Landing = () => {
       {/* Header */}
       <header className="flex items-center justify-between px-6 py-4">
         <div className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-gradient-primary rounded-xl flex items-center justify-center">
-            <span className="text-primary-foreground font-bold text-lg font-display">M</span>
-          </div>
+          <img src={mkashLogo} alt="M-Kash Loans" className="w-10 h-10 object-contain" />
           <span className="font-bold text-xl text-foreground font-display">M-Kash Loans</span>
         </div>
         <ThemeToggle />
