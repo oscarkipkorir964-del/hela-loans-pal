@@ -8,7 +8,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { Loader2, ArrowLeft, Edit, Save, User, Phone, Hash } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
-// Logo removed - using text brand
+import mkashLogo from "@/assets/mkash-logo.png";
 
 const Profile = () => {
   const navigate = useNavigate();
