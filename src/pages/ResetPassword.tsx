@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { ArrowLeft, Loader2, Shield } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
-// Logo removed - using text brand
+import mkashLogo from "@/assets/mkash-logo.png";
 import {
   InputOTP,
   InputOTPGroup,
@@ -141,9 +141,7 @@ const ResetPassword = () => {
     <div className="min-h-screen bg-gradient-soft flex items-center justify-center p-4">
       <Card className="w-full max-w-md shadow-card">
         <CardHeader className="text-center space-y-4">
-          <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto">
-            <span className="text-primary-foreground font-bold text-2xl font-display">M</span>
-          </div>
+          <img src={mkashLogo} alt="M-Kash Loans" className="w-16 h-16 object-contain mx-auto" />
           <div>
             <CardTitle className="text-2xl">Reset Password</CardTitle>
             <CardDescription>
