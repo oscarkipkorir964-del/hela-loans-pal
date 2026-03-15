@@ -83,7 +83,7 @@ const Profile = () => {
             <Button variant="outline" size="icon" onClick={() => navigate("/dashboard")}>
               <ArrowLeft className="w-4 h-4" />
             </Button>
-            <div className="h-10 sm:h-12 w-10 sm:w-12 bg-gradient-primary rounded-xl flex items-center justify-center"><span className="text-primary-foreground font-bold text-xl font-display">M</span></div>
+            <img src={mkashLogo} alt="M-Kash Loans" className="h-10 sm:h-12 w-10 sm:w-12 object-contain" />
             <h1 className="text-xl sm:text-2xl md:text-3xl font-bold">My Profile</h1>
           </div>
           <ThemeToggle />
