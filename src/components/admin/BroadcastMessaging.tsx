@@ -152,8 +152,8 @@ export const BroadcastMessaging = ({ applications }: BroadcastMessagingProps) =>
       return;
     }
 
-    if (!sendSms && !sendInApp) {
-      toast.error("Please select at least one delivery method");
+    if (!sendInApp) {
+      toast.error("Please enable in-app messaging");
       return;
     }
 
@@ -162,35 +162,6 @@ export const BroadcastMessaging = ({ applications }: BroadcastMessagingProps) =>
     try {
       const recipients = filteredUsers.filter(u => selectedUsers.has(u.user_id));
       let smsSuccessCount = 0;
-
-      // Send SMS if enabled
-      if (sendSms) {
-        const smsRecipients = recipients.map(u => ({
-          phone: u.phone,
-          name: u.name
-        }));
-
-        const { data: smsResult, error: smsError } = await supabase.functions.invoke('send-broadcast-sms', {
-          body: {
-            recipients: smsRecipients,
-            subject: subject || '',
-            message: message
-          }
-        });
-
-        if (smsError) {
-          console.error('SMS error:', smsError);
-          toast.error(`SMS sending failed: ${smsError.message}`);
-        } else {
-          smsSuccessCount = smsResult?.successCount || 0;
-          if (smsResult?.failCount > 0) {
-            const errorMsg = smsResult?.errorMessage || 'Unknown error';
-            toast.error(`SMS failed: ${errorMsg}. ${smsResult.failCount} messages not delivered.`);
-          } else if (smsSuccessCount > 0) {
-            toast.success(`SMS delivered to ${smsSuccessCount} recipients`);
-          }
-        }
-      }
 
       // Send in-app messages if enabled
       if (sendInApp) {
@@ -261,9 +232,7 @@ export const BroadcastMessaging = ({ applications }: BroadcastMessagingProps) =>
         date: new Date().toISOString()
       }, ...prev]);
 
-      const deliveryMethods = [];
-      if (sendInApp) deliveryMethods.push('in-app');
-      if (sendSms) deliveryMethods.push(`SMS (${smsSuccessCount})`);
+      const deliveryMethods = ['in-app'];
       
       toast.success(`Broadcast sent via ${deliveryMethods.join(' & ')} to ${selectedUsers.size} users`);
       setMessage("");
@@ -351,27 +320,11 @@ export const BroadcastMessaging = ({ applications }: BroadcastMessagingProps) =>
                   onCheckedChange={setSendInApp}
                 />
               </div>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <Smartphone className="w-4 h-4 text-muted-foreground" />
-                  <Label htmlFor="send-sms" className="text-sm cursor-pointer">SMS Message</Label>
-                </div>
-                <Switch
-                  id="send-sms"
-                  checked={sendSms}
-                  onCheckedChange={setSendSms}
-                />
-              </div>
-              {sendSms && (
-                <p className="text-xs text-muted-foreground">
-                  ⚠️ SMS will be sent via Africa's Talking. Standard rates apply.
-                </p>
-              )}
             </div>
 
             <Button 
               onClick={sendBroadcast} 
-              disabled={isSending || !message.trim() || selectedUsers.size === 0 || (!sendSms && !sendInApp)}
+              disabled={isSending || !message.trim() || selectedUsers.size === 0 || !sendInApp}
               className="w-full"
             >
               {isSending ? (
