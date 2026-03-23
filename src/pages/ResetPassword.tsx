@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { ArrowLeft, Loader2, Shield, Mail } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
-import mkashLogo from "@/assets/mkash-logo.png";
+import mwananchiLogo from "@/assets/mwananchi-logo.png";
 
 const ResetPassword = () => {
   const [step, setStep] = useState<'email' | 'success'>('email');
@@ -58,7 +58,7 @@ const ResetPassword = () => {
     <div className="min-h-screen bg-gradient-soft flex items-center justify-center p-4">
       <Card className="w-full max-w-md shadow-card">
         <CardHeader className="text-center space-y-4">
-          <img src={mkashLogo} alt="M-Kash Loans" className="w-16 h-16 object-contain mx-auto" />
+          <img src={mwananchiLogo} alt="Mwananchi Credit Loans" className="w-16 h-16 object-contain mx-auto" />
           <div>
             <CardTitle className="text-2xl">Reset Password</CardTitle>
             <CardDescription>
