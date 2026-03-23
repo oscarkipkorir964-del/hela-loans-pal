@@ -124,7 +124,7 @@ const Landing = () => {
   const plugin = useRef(Autoplay({ delay: 3000, stopOnInteraction: false }));
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/50 to-slate-50/30 dark:from-background dark:via-background dark:to-background">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50/50 to-slate-50/30 dark:from-background dark:via-background dark:to-background">
       {/* Header */}
       <header className="flex items-center justify-between px-6 py-4">
         <div className="flex items-center gap-2">
