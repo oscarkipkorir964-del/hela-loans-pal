@@ -72,7 +72,6 @@ export const BroadcastMessaging = ({ applications }: BroadcastMessagingProps) =>
   const [targetGroup, setTargetGroup] = useState("all");
   const [selectedUsers, setSelectedUsers] = useState<Set<string>>(new Set());
   const [isSending, setIsSending] = useState(false);
-  const [sendSms, setSendSms] = useState(true);
   const [sendInApp, setSendInApp] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedTemplate, setSelectedTemplate] = useState("");
