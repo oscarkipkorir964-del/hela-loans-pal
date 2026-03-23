@@ -187,7 +187,7 @@ export const ExportReports = ({
       description: `${filterByDate(supportRequests).length} records`,
       icon: FileText,
       action: exportSupport,
-      color: "text-teal-600"
+      color: "text-primary"
     },
   ];
 

@@ -9,14 +9,14 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { useRef } from "react";
-import mkashLogo from "@/assets/mkash-logo.png";
+import mwananchiLogo from "@/assets/mwananchi-logo.png";
 
 const testimonials = [
   {
     name: "Kevin Kipyegon",
     location: "Nairobi",
     rating: 5,
-    text: "I got my loan in just 5 minutes! M-Kash Loans saved me when I needed emergency funds for my business.",
+    text: "I got my loan in just 5 minutes! Mwananchi Credit Loans saved me when I needed emergency funds for my business.",
     amount: "KSh 8,500"
   },
   {
@@ -37,21 +37,21 @@ const testimonials = [
     name: "Faith Cherono",
     location: "Eldoret",
     rating: 5,
-    text: "Simple process, no paperwork. I recommend M-Kash Loans to all my friends and family.",
+    text: "Simple process, no paperwork. I recommend Mwananchi Credit Loans to all my friends and family.",
     amount: "KSh 10,000"
   },
   {
     name: "Dennis Mutua",
     location: "Machakos",
     rating: 5,
-    text: "I've used many loan apps but M-Kash Loans is the best. Quick disbursement directly to M-Pesa!",
+    text: "I've used many loan apps but Mwananchi Credit Loans is the best. Quick disbursement directly to M-Pesa!",
     amount: "KSh 14,500"
   },
   {
     name: "Mary Njeri",
     location: "Thika",
     rating: 5,
-    text: "Lifesaver! Got funds for my daughter's school fees within minutes. Thank you M-Kash Loans!",
+    text: "Lifesaver! Got funds for my daughter's school fees within minutes. Thank you Mwananchi Credit Loans!",
     amount: "KSh 9,000"
   },
   {
@@ -72,7 +72,7 @@ const testimonials = [
     name: "James Mwangi",
     location: "Nyeri",
     rating: 5,
-    text: "M-Kash Loans has helped me grow my small business. The loan limits keep increasing!",
+    text: "Mwananchi Credit Loans has helped me grow my small business. The loan limits keep increasing!",
     amount: "KSh 15,000"
   },
   {
@@ -93,14 +93,14 @@ const testimonials = [
     name: "Caroline Muthoni",
     location: "Kiambu",
     rating: 5,
-    text: "I was skeptical at first but M-Kash Loans proved me wrong. Genuine and reliable!",
+    text: "I was skeptical at first but Mwananchi Credit Loans proved me wrong. Genuine and reliable!",
     amount: "KSh 8,000"
   },
   {
     name: "Michael Ouma",
     location: "Homa Bay",
     rating: 5,
-    text: "Emergency funds when I needed them most. M-Kash Loans is a blessing!",
+    text: "Emergency funds when I needed them most. Mwananchi Credit Loans is a blessing!",
     amount: "KSh 10,500"
   },
   {
@@ -114,7 +114,7 @@ const testimonials = [
     name: "David Kimani",
     location: "Nairobi",
     rating: 5,
-    text: "Best rates in the market! I've compared with others and M-Kash Loans wins.",
+    text: "Best rates in the market! I've compared with others and Mwananchi Credit Loans wins.",
     amount: "KSh 20,000"
   }
 ];
@@ -124,12 +124,12 @@ const Landing = () => {
   const plugin = useRef(Autoplay({ delay: 3000, stopOnInteraction: false }));
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/50 to-slate-50/30 dark:from-background dark:via-background dark:to-background">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50/50 to-slate-50/30 dark:from-background dark:via-background dark:to-background">
       {/* Header */}
       <header className="flex items-center justify-between px-6 py-4">
         <div className="flex items-center gap-2">
-          <img src={mkashLogo} alt="M-Kash Loans" className="w-10 h-10 object-contain" />
-          <span className="font-bold text-xl text-foreground font-display">M-Kash Loans</span>
+          <img src={mwananchiLogo} alt="Mwananchi Credit Loans" className="w-10 h-10 object-contain" />
+          <span className="font-bold text-xl text-foreground font-display">Mwananchi Credit Loans</span>
         </div>
         <ThemeToggle />
       </header>
@@ -145,7 +145,7 @@ const Landing = () => {
             </div>
             <div className="w-px h-4 bg-border" />
             <div className="flex items-center gap-2">
-              <TrendingUp className="w-4 h-4 text-emerald-500" />
+              <TrendingUp className="w-4 h-4 text-secondary" />
               <span className="text-xs font-medium text-muted-foreground">KSh 2B+ Disbursed</span>
             </div>
           </div>
@@ -228,8 +228,8 @@ const Landing = () => {
             </div>
 
             <div className="bg-card/80 backdrop-blur-sm p-5 rounded-2xl shadow-sm border border-border/50">
-              <div className="w-12 h-12 bg-teal-100 dark:bg-teal-900/30 rounded-xl flex items-center justify-center mb-3">
-                <Shield className="w-6 h-6 text-teal-500" />
+              <div className="w-12 h-12 bg-primary/10 dark:bg-primary/20 rounded-xl flex items-center justify-center mb-3">
+                <Shield className="w-6 h-6 text-primary" />
               </div>
               <h3 className="font-semibold text-sm text-foreground mb-1">Bank-Level Security</h3>
               <p className="text-muted-foreground text-xs">Your data is protected</p>
@@ -244,8 +244,8 @@ const Landing = () => {
             </div>
 
             <div className="bg-card/80 backdrop-blur-sm p-5 rounded-2xl shadow-sm border border-border/50">
-              <div className="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/30 rounded-xl flex items-center justify-center mb-3">
-                <Clock className="w-6 h-6 text-emerald-500" />
+              <div className="w-12 h-12 bg-secondary/10 dark:bg-secondary/20 rounded-xl flex items-center justify-center mb-3">
+                <Clock className="w-6 h-6 text-secondary" />
               </div>
               <h3 className="font-semibold text-sm text-foreground mb-1">24/7 Available</h3>
               <p className="text-muted-foreground text-xs">Apply anytime</p>

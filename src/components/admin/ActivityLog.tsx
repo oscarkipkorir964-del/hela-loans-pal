@@ -91,7 +91,7 @@ export const ActivityLog = ({
       case 'application': return 'bg-blue-500';
       case 'deposit': return 'bg-purple-500';
       case 'withdrawal': return 'bg-orange-500';
-      case 'support': return 'bg-teal-500';
+      case 'support': return 'bg-primary';
       case 'disbursement': return 'bg-green-500';
     }
   };
