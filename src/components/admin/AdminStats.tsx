@@ -27,7 +27,7 @@ export const AdminStats = ({ stats }: AdminStatsProps) => {
     { label: "Support", value: stats.pendingSupport, icon: MessageSquare, color: "text-blue-600" },
     { label: "Withdrawals", value: stats.pendingWithdrawals, icon: Wallet, color: "text-orange-600" },
     { label: "Deposits", value: stats.unverifiedDeposits, icon: PiggyBank, color: "text-purple-600" },
-    { label: "Disburse", value: stats.pendingDisbursements, icon: ArrowDownToLine, color: "text-teal-600" },
+    { label: "Disburse", value: stats.pendingDisbursements, icon: ArrowDownToLine, color: "text-primary" },
   ];
 
   return (
