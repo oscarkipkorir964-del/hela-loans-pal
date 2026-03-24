@@ -88,14 +88,14 @@ const Payment = () => {
       try {
         const { data } = await supabase
           .from('savings_deposits')
-          .select('verified, amount')
+          .select('verified, amount, mpesa_message')
           .eq('transaction_code', pendingReference)
           .maybeSingle();
 
         if (data?.verified === true) {
           console.log('Poll detected verified deposit:', data);
           await handleVerified(data.amount);
-        } else if (data?.verified === false) {
+        } else if (data?.verified === false && data?.mpesa_message?.toLowerCase().includes('failed')) {
           console.log('Poll detected failed deposit:', data);
           handleFailed();
         }
@@ -116,13 +116,16 @@ const Payment = () => {
         },
         async (payload) => {
           console.log('Deposit change received:', payload);
-          const newRecord = payload.new as { verified: boolean | null; amount: number; transaction_code: string };
+          const newRecord = payload.new as { verified: boolean | null; amount: number; transaction_code: string; mpesa_message: string };
           
           if (newRecord.transaction_code !== pendingReference) return;
           
+          // Only respond to UPDATE events (not the initial INSERT)
+          if (payload.eventType === 'INSERT') return;
+          
           if (newRecord.verified === true) {
             await handleVerified(newRecord.amount);
-          } else if (newRecord.verified === false) {
+          } else if (newRecord.verified === false && newRecord.mpesa_message?.toLowerCase().includes('failed')) {
             handleFailed();
           }
         }
