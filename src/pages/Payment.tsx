@@ -95,7 +95,7 @@ const Payment = () => {
         if (data?.verified === true) {
           console.log('Poll detected verified deposit:', data);
           await handleVerified(data.amount);
-        } else if (data?.verified === false) {
+        } else if (data?.verified === false && data?.mpesa_message?.toLowerCase().includes('failed')) {
           console.log('Poll detected failed deposit:', data);
           handleFailed();
         }
