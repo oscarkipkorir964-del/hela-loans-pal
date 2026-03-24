@@ -88,7 +88,7 @@ const Payment = () => {
       try {
         const { data } = await supabase
           .from('savings_deposits')
-          .select('verified, amount')
+          .select('verified, amount, mpesa_message')
           .eq('transaction_code', pendingReference)
           .maybeSingle();
 
