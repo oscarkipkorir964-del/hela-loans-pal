@@ -56,77 +56,77 @@ const Payment = () => {
     console.log('Setting up real-time listener + polling for reference:', pendingReference);
 
     let settled = false;
+    const refCapture = pendingReference;
 
     const handleVerified = async (amount: number) => {
       if (settled) return;
       settled = true;
+      console.log('Payment verified! Amount:', amount);
       setPaymentStatus('success');
+      setPendingReference(null);
+      setDepositAmount("");
       await fetchSavingsBalance();
       toast({
         title: "Payment Confirmed!",
         description: `KES ${amount.toLocaleString()} has been added to your savings.`,
       });
-      setPendingReference(null);
-      setDepositAmount("");
     };
 
-    const handleFailed = () => {
+    const handleFailed = (reason?: string) => {
       if (settled) return;
       settled = true;
+      console.log('Payment failed:', reason);
       setPaymentStatus('failed');
+      setPendingReference(null);
       toast({
         title: "Payment Failed",
-        description: "The payment was not completed. Please try again.",
+        description: reason || "The payment was not completed. Please try again.",
         variant: "destructive",
       });
-      setPendingReference(null);
     };
 
-    // Polling fallback — check every 5 seconds
+    // Polling — check every 3 seconds
     const pollInterval = setInterval(async () => {
       if (settled) return;
       try {
         const { data } = await supabase
           .from('savings_deposits')
           .select('verified, amount, mpesa_message')
-          .eq('transaction_code', pendingReference)
+          .eq('transaction_code', refCapture)
           .maybeSingle();
 
+        console.log('Poll check:', { verified: data?.verified, message: data?.mpesa_message });
+
         if (data?.verified === true) {
-          console.log('Poll detected verified deposit:', data);
           await handleVerified(data.amount);
-        } else if (data?.verified === false && data?.mpesa_message?.toLowerCase().includes('failed')) {
-          console.log('Poll detected failed deposit:', data);
-          handleFailed();
+        } else if (data?.mpesa_message?.toLowerCase().includes('failed')) {
+          handleFailed(data.mpesa_message);
         }
       } catch (err) {
         console.error('Poll error:', err);
       }
-    }, 5000);
+    }, 3000);
 
-    // Realtime subscription as primary channel
+    // Realtime subscription as secondary channel
     const channel = supabase
-      .channel(`savings-deposit-${pendingReference}`)
+      .channel(`savings-deposit-${refCapture}`)
       .on(
         'postgres_changes',
         {
-          event: '*',
+          event: 'UPDATE',
           schema: 'public',
           table: 'savings_deposits',
         },
         async (payload) => {
-          console.log('Deposit change received:', payload);
+          console.log('Deposit realtime update:', payload);
           const newRecord = payload.new as { verified: boolean | null; amount: number; transaction_code: string; mpesa_message: string };
           
-          if (newRecord.transaction_code !== pendingReference) return;
-          
-          // Only respond to UPDATE events (not the initial INSERT)
-          if (payload.eventType === 'INSERT') return;
+          if (newRecord.transaction_code !== refCapture) return;
           
           if (newRecord.verified === true) {
             await handleVerified(newRecord.amount);
-          } else if (newRecord.verified === false && newRecord.mpesa_message?.toLowerCase().includes('failed')) {
-            handleFailed();
+          } else if (newRecord.mpesa_message?.toLowerCase().includes('failed')) {
+            handleFailed(newRecord.mpesa_message);
           }
         }
       )
@@ -134,17 +134,12 @@ const Payment = () => {
         console.log('Realtime subscription status:', status);
       });
 
-    // Timeout after 2 minutes
+    // Timeout after 3 minutes
     const timeout = setTimeout(() => {
       if (!settled) {
-        handleFailed();
-        toast({
-          title: "Payment Timeout",
-          description: "We didn't receive confirmation. If you completed the payment, please contact support.",
-          variant: "destructive",
-        });
+        handleFailed("We didn't receive confirmation. If you completed the payment, please contact support.");
       }
-    }, 120000);
+    }, 180000);
 
     return () => {
       settled = true;
@@ -152,7 +147,8 @@ const Payment = () => {
       supabase.removeChannel(channel);
       clearTimeout(timeout);
     };
-  }, [pendingReference, paymentStatus, toast]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pendingReference]);
 
   const fetchPhoneNumber = async () => {
     try {
