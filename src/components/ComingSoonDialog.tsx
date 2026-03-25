@@ -1,4 +1,4 @@
-import mwananchiLogo from "@/assets/mwananchi-logo.png";
+import okoaPesaLogo from "@/assets/okoa-pesa-logo.png";
 import {
   Dialog,
   DialogContent,
@@ -17,7 +17,7 @@ export const ComingSoonDialog = ({ open, onOpenChange }: ComingSoonDialogProps) 
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-md border-2 border-primary/20">
         <DialogHeader className="text-center">
-          <img src={mwananchiLogo} alt="Mwananchi Credit Loans" className="w-20 h-20 object-contain mx-auto mb-4 animate-bounce-soft" />
+          <img src={okoaPesaLogo} alt="Okoa Pesa" className="w-20 h-20 object-contain mx-auto mb-4 animate-bounce-soft" />
           <DialogTitle className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
             Coming Soon
           </DialogTitle>

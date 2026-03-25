@@ -6,7 +6,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { Loader2, ArrowLeft, CheckCircle, XCircle, Clock } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import zenkaLogo from "@/assets/zenka-logo.png";
+import okoaPesaLogo from "@/assets/okoa-pesa-logo.png";
 
 const AdminApplications = () => {
   const navigate = useNavigate();
@@ -65,7 +65,7 @@ const AdminApplications = () => {
           <Button variant="outline" size="icon" onClick={() => navigate("/admin")}>
             <ArrowLeft className="w-4 h-4" />
           </Button>
-          <img src={zenkaLogo} alt="Zenka" className="h-10 sm:h-12 w-auto" />
+          <img src={okoaPesaLogo} alt="Zenka" className="h-10 sm:h-12 w-auto" />
           <h1 className="text-xl sm:text-2xl md:text-3xl font-bold">Applications</h1>
         </div>
 
