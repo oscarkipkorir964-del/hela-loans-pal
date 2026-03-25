@@ -13,7 +13,7 @@ import { Badge } from "@/components/ui/badge";
 import { ChatBot } from "@/components/ChatBot";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { NotificationsCenter } from "@/components/NotificationsCenter";
-import mwananchiLogo from "@/assets/mwananchi-logo.png";
+import okoaPesaLogo from "@/assets/okoa-pesa-logo.png";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -277,7 +277,7 @@ const Dashboard = () => {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
         <div className="text-center">
-          <img src={mwananchiLogo} alt="Mwananchi Credit Loans" className="w-20 h-20 object-contain mx-auto mb-4" />
+          <img src={okoaPesaLogo} alt="Okoa Pesa" className="w-20 h-20 object-contain mx-auto mb-4" />
           <Loader2 className="w-8 h-8 animate-spin text-primary mx-auto" />
         </div>
       </div>
@@ -294,8 +294,8 @@ const Dashboard = () => {
               <ThemeToggle />
             </div>
             <div className="flex items-center gap-2 min-w-0">
-              <img src={mwananchiLogo} alt="Mwananchi Credit Loans" className="w-8 h-8 object-contain flex-shrink-0" />
-              <span className="font-bold text-xl text-foreground font-display truncate">Mwananchi Credit Loans</span>
+              <img src={okoaPesaLogo} alt="Okoa Pesa" className="w-8 h-8 object-contain flex-shrink-0" />
+              <span className="font-bold text-xl text-foreground font-display truncate">Okoa Pesa</span>
             </div>
             <NotificationsCenter />
           </div>
@@ -308,7 +308,7 @@ const Dashboard = () => {
           <h1 className="text-2xl font-bold text-foreground font-display">
             Hello, {userName}!
           </h1>
-          <p className="text-muted-foreground text-sm">Welcome back to Mwananchi Credit Loans</p>
+          <p className="text-muted-foreground text-sm">Welcome back to Okoa Pesa</p>
         </div>
 
         {/* Quick Actions */}
